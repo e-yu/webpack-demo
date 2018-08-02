@@ -1,0 +1,54 @@
+{
+    "parserOptions":{
+        "ecmaVersion":6,
+        "sourceType":"module",
+        "ecmaFeatures":{
+            
+            "jsx":true,
+            "globalReturn":true,
+            "impliedStrict":true
+        }
+    },
+    "rules":{
+        "semi":2,
+        "react/jsx-uses-react":"error",
+        "react/jsx-uses-vars":"error"
+    },
+    
+    "env":{
+        "browser":true,               
+        "node":true,                 
+        "commonjs":true,             
+        "shared-node-browser":true,  
+        "es6":true,                      
+       "worker" :true ,                   
+        "amd" :true,                      
+        "mocha":true,                        
+        "jasmine":true,                       
+        "jest":true,                          
+        "phantomjs":true,                     
+        "protractor":true,                    
+        "qunit":true,                         
+        "jquery":true,                        
+        "prototypejs":true,                   
+        "shelljs":true,                       
+        "meteor":true,                       
+        "mongo":true,                        
+        "applescript":true,                   
+        "nashorn":true,                       
+        "serviceworker":true,                
+        "atomtest":true,                      
+        "embertest":true,                    
+        "webextensions":true,                
+        "greasemonkey":true                   
+      },
+      "plugins":[
+          "react"
+      ],
+      "globals": {
+        "document": true,
+        "navigator": true,
+        "window": true,
+        "think": true
+    }
+}

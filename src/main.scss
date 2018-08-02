@@ -1,0 +1,142 @@
+@font-face{
+    font-family:"icons-turn-arrow";
+    src:url("./font/turn-arrow.svg") format("svg"),url("./font/turn-arrow.woff") format("woff");
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+html,body{
+    background-color:#222;
+    width:100%;
+    height:100%;
+    
+}
+
+.content{
+    width:100%;
+    height:100%;
+}
+
+/*stage -- start*/
+.stage{
+    position:relative;
+    width:100%;
+    height:680px;
+
+    overflow:hidden;
+}
+/*stage -- end */
+
+/*image -- start */
+.img-sec{
+    position:relative;
+
+    width:100%;
+    height:100%;
+    background-color:#ddd;
+
+    @at-root{
+        .img-figure{
+            position:absolute;
+            width:320px;
+            height:360px;
+            padding:40px;
+
+            cursor:pointer;
+            box-sizing:border-box;
+            transform-style:preserve-3d;
+            background-color:#fff;
+
+            perspective:1800px;
+            transform-origin:0 50% 0;
+            transition:transform 0.4s ease-in-out,left 0.4s ease-in-out, top 0.4s ease-in-out;
+
+            img{
+                width:240px;
+                height:240px;
+            }
+
+            &.is-inverse{
+                transform:translateX(320px) rotateY(180deg);
+            }
+        }
+        figcaption{
+            text-align:center;
+
+            .img-title{
+                margin:20px 0 0 0;
+
+                color:#a7a0a2;
+                font-size:16px;
+            }
+
+            .img-back{
+                position:absolute;
+                left:0;
+                top:0;
+                width:100%;
+                height:100%;
+                padding:50px 40px;
+                overflow:auto;
+
+                color:#a7a0a2;
+                font-size:22px;
+                line-height: 1.25;
+                text-align:center;
+                background-color:#fff;
+                box-sizing:border-box;
+                transform:rotateY(180deg) translateZ(1px);
+            }
+        }
+    }
+}
+/*image -- end */
+
+
+/*controller --start */
+.controller-nav{
+    position:absolute;
+    left:0;
+    bottom:30px;
+    z-index:101;
+    width:100%;
+    text-align:center;
+
+    @at-root {
+        .controller-unit{
+            display:inline-block;
+            margin:0 5px;
+            width:30px;
+            height:30px;
+            text-align:center;
+            vertical-align:center;
+            cursor:pointer;
+            background-color:#aaa;
+            border-radius:50%;
+            transform:scale(0.5);
+            transition:transform 0.4s ease-in-out,background-color 0.3s;
+            &.is-center{
+                background-color:#888;
+                transform:scale(1);
+
+                &::after{
+                    color:#fff;
+                    font-family:"icons-turn-arrow";
+                    font-size:80%;
+                    content:"\e600";
+                    line-height:30px;
+                    -webkit-font-smoothing:antialiased;
+                }
+
+                &.is-inverse{
+                    background-color:#555;
+                    transform:rotateY(180deg);
+                }
+            }
+        }
+    }
+}
+/*controller -- end */
